@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="it">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Miel de Haute-Loire | Candice & Francesco</title>
-    <meta name="description" content="Un miel de Haute-Loire, entre traditions familiales françaises et souvenirs du sud de l'Italie.">
+    <meta name="description" content="Un miele di Haute-Loire, tra tradizioni familiari francesi e ricordi del sud Italia.">
     <meta property="og:title" content="Miel de Haute-Loire | Candice & Francesco">
-    <meta property="og:description" content="Un petit cadeau doux, entre traditions familiales et souvenirs partagés.">
+    <meta property="og:description" content="Un piccolo dono dolce, tra tradizioni familiari e ricordi condivisi.">
     <meta property="og:image" content="https://fra0074.github.io/miele_qrcode/assets/haute-loire-ruches-enfant.jpg">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://fra0074.github.io/miele_qrcode/">
@@ -16,9 +16,9 @@
             --background: #faf6f0;
             --paper: #fffdf8;
             --text: #2b2118;
-            --muted: #6f6258;
+            --muted: #665b52;
             --accent: #8b4513;
-            --line: #e4d8c4;
+            --line: #e1d3be;
         }
 
         * {
@@ -30,24 +30,24 @@
             background: var(--background);
             color: var(--text);
             font-family: Georgia, "Times New Roman", serif;
-            line-height: 1.6;
+            line-height: 1.55;
         }
 
         main {
-            width: min(920px, calc(100% - 32px));
+            width: min(1120px, calc(100% - 32px));
             margin: 0 auto;
-            padding: 36px 0 48px;
+            padding: 32px 0 48px;
         }
 
         header {
-            margin-bottom: 28px;
+            margin-bottom: 22px;
             text-align: center;
         }
 
         h1 {
-            margin: 0 0 8px;
+            margin: 0 0 6px;
             color: var(--accent);
-            font-size: clamp(2.4rem, 8vw, 4.5rem);
+            font-size: clamp(2.2rem, 7vw, 4.2rem);
             font-weight: 400;
             line-height: 1.05;
         }
@@ -59,79 +59,81 @@
             font-size: 1rem;
         }
 
-        .photo {
-            margin: 28px 0;
-            background: var(--paper);
-            border: 1px solid var(--line);
+        .mosaic {
+            display: grid;
+            grid-template-columns: 1.15fr 1fr 0.9fr;
+            gap: 10px;
+            margin: 24px 0 28px;
         }
 
-        .photo img {
+        .mosaic img,
+        .final-image {
             display: block;
             width: 100%;
-            aspect-ratio: 16 / 9;
             object-fit: cover;
         }
 
-        .photo figcaption {
-            margin: 0;
-            padding: 10px 14px;
-            color: var(--muted);
-            font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
-            font-size: 0.92rem;
+        .mosaic img {
+            height: clamp(150px, 24vw, 260px);
         }
 
-        .content {
+        .text-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 18px;
+            margin-bottom: 28px;
+        }
+
+        .text-box {
             background: var(--paper);
             border: 1px solid var(--line);
-            padding: clamp(22px, 5vw, 42px);
+            padding: clamp(18px, 3vw, 28px);
         }
 
-        .pair {
-            padding: 0 0 24px;
-        }
-
-        .pair + .pair {
-            border-top: 1px solid var(--line);
-            padding-top: 24px;
-        }
-
-        .fr {
-            margin: 0;
-            font-size: clamp(1.22rem, 3vw, 1.7rem);
-            line-height: 1.45;
-        }
-
-        .it {
-            margin: 10px 0 0;
-            color: var(--muted);
-            font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
-            font-size: 1rem;
-            line-height: 1.55;
-        }
-
-        .sources {
-            display: grid;
-            gap: 18px;
-            margin-top: 4px;
-        }
-
-        .source {
-            border-top: 1px solid var(--line);
-            padding-top: 18px;
-        }
-
-        .source h2 {
-            margin: 0 0 6px;
+        .text-box h2 {
+            margin: 0 0 16px;
             color: var(--accent);
-            font-size: 1.35rem;
+            font-size: 1.45rem;
             font-weight: 400;
         }
 
-        .source p {
-            margin: 0;
+        .text-box p {
+            margin: 0 0 14px;
+            font-size: clamp(1.05rem, 1.8vw, 1.2rem);
+        }
+
+        .text-box p:last-child {
+            margin-bottom: 0;
+        }
+
+        .source-title {
+            color: var(--accent);
+            display: block;
+            font-size: 1.08rem;
+            font-weight: 400;
+            margin-top: 18px;
+        }
+
+        .southern-note {
+            margin: 26px 0 18px;
+            text-align: center;
+        }
+
+        .southern-note p {
+            margin: 0 0 6px;
+            font-size: clamp(1.35rem, 3vw, 2.2rem);
+        }
+
+        .southern-note .it {
             color: var(--muted);
             font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
-            font-size: 0.98rem;
+            font-size: 1rem;
+        }
+
+        .final-image {
+            height: auto;
+            margin: 0 auto;
+            max-width: 760px;
         }
 
         footer {
@@ -142,7 +144,22 @@
 
         footer p {
             margin: 0;
-            font-size: 1.2rem;
+            font-size: 1.15rem;
+        }
+
+        @media (max-width: 760px) {
+            main {
+                width: min(620px, calc(100% - 28px));
+            }
+
+            .mosaic {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 6px;
+            }
+
+            .text-grid {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
@@ -153,58 +170,40 @@
             <p class="subtitle">Candice &amp; Francesco</p>
         </header>
 
-        <figure class="photo">
-            <img src="assets/haute-loire-ruches-enfant.jpg" alt="Enfant près des ruches familiales en Haute-Loire">
-            <figcaption>Haute-Loire, auprès des ruches familiales.</figcaption>
-        </figure>
-
-        <section class="content" aria-label="Histoire du miel">
-            <div class="pair">
-                <p class="fr">Ce miel a été récolté en Haute-Loire, à l'endroit où les grands-parents maternels de Candice veillaient eux-mêmes sur leurs ruches.</p>
-                <p class="it">Questo miele è stato raccolto in Haute-Loire, nel luogo in cui i nonni materni di Candice si prendevano cura delle loro arnie.</p>
-            </div>
-
-            <div class="pair">
-                <p class="fr">Il symbolise le lien entre nos traditions familiales. Une douceur à partager en souvenir de ceux qui nous ont transmis le goût du savoir et des bonnes choses.</p>
-                <p class="it">Simboleggia il legame tra le nostre tradizioni familiari. Una dolcezza da condividere in ricordo di chi ci ha trasmesso il gusto del sapere e delle cose buone.</p>
-            </div>
-
-            <div class="pair">
-                <p class="fr">Saurez-vous deviner si vous avez hérité d'un miel de sapin ou d'un miel fleuri ? 🐝</p>
-                <p class="it">Saprete indovinare se avete ricevuto un miele di abete o un miele millefiori?</p>
-            </div>
-
-            <div class="sources">
-                <div class="source">
-                    <h2>Miel toutes fleurs</h2>
-                    <p>Philippe Pagès - Seniautre, 43350 Saint Geneys près Saint Paulien</p>
-                    <p>Miele millefiori: Philippe Pagès - Seniautre, 43350 Saint Geneys presso Saint Paulien</p>
-                </div>
-
-                <div class="source">
-                    <h2>Miel de sapin</h2>
-                    <p>La Miellerie de la Durande - 20 rue de l'Abreuvoir - 43400 Siaugues-Sainte-Marie</p>
-                    <p>Miele di abete: La Miellerie de la Durande - 20 rue de l'Abreuvoir - 43400 Siaugues-Sainte-Marie</p>
-                </div>
-            </div>
+        <section class="mosaic" aria-label="Mosaico di immagini familiari">
+            <img src="assets/haute-loire-ruches-enfant.jpg" alt="Bambina vicino alle arnie familiari in Haute-Loire">
+            <img src="assets/haute-loire-ruches-cadre.jpg" alt="Apicoltori che osservano un telaio d'arnia in Haute-Loire">
+            <img src="assets/sud-italie-miel.jpg" alt="Ricordo familiare legato al miele">
         </section>
 
-        <figure class="photo">
-            <img src="assets/haute-loire-ruches-cadre.jpg" alt="Apiculteurs examinant un cadre de ruche en Haute-Loire">
-            <figcaption>Des gestes transmis, des ruches veillées, une histoire qui continue.</figcaption>
-        </figure>
+        <section class="text-grid" aria-label="Testo in italiano e inglese">
+            <article class="text-box">
+                <h2>Italiano</h2>
+                <p>Questo miele è stato raccolto in Haute-Loire, nel luogo in cui i nonni materni di Candice si prendevano cura delle loro arnie.</p>
+                <p>Simboleggia il legame tra le nostre tradizioni familiari. Una dolcezza da condividere in ricordo di chi ci ha trasmesso il gusto del sapere e delle cose buone.</p>
+                <p>Saprete indovinare se avete ricevuto un miele di abete o un miele millefiori? 🐝</p>
 
-        <section class="content" aria-label="Souvenir italien">
-            <div class="pair">
-                <p class="fr">Pendant ce temps-là dans le sud de l'Italie...</p>
-                <p class="it">Nel frattempo, nel sud Italia...</p>
-            </div>
+                <p><span class="source-title">Miele millefiori</span>Philippe Pagès - Seniautre, 43350 Saint Geneys presso Saint Paulien</p>
+                <p><span class="source-title">Miele di abete</span>La Miellerie de la Durande - 20 rue de l'Abreuvoir - 43400 Siaugues-Sainte-Marie</p>
+            </article>
+
+            <article class="text-box">
+                <h2>English</h2>
+                <p>This honey was harvested in Haute-Loire, where Candice's maternal grandparents once tended their own beehives.</p>
+                <p>It symbolizes the link between our family traditions. A sweetness to share in memory of those who passed on to us a taste for knowledge and good things.</p>
+                <p>Can you guess whether you received fir honey or wildflower honey? 🐝</p>
+
+                <p><span class="source-title">Wildflower honey</span>Philippe Pagès - Seniautre, 43350 Saint Geneys near Saint Paulien</p>
+                <p><span class="source-title">Fir honey</span>La Miellerie de la Durande - 20 rue de l'Abreuvoir - 43400 Siaugues-Sainte-Marie</p>
+            </article>
         </section>
 
-        <figure class="photo">
-            <img src="assets/sud-italie-miel.jpg" alt="Souvenir familial autour du miel dans le sud de l'Italie">
-            <figcaption>Souvenir familial autour du miel.</figcaption>
-        </figure>
+        <section class="southern-note" aria-label="Ricordo nel sud Italia">
+            <p>Pendant ce temps-là dans le sud de l'Italie...</p>
+            <p class="it">Nel frattempo, nel sud Italia...</p>
+        </section>
+
+        <img class="final-image" src="assets/sud-italia-auto.jpg" alt="Ricordo nel sud Italia con una macchina rossa">
 
         <footer>
             <p>Candice &amp; Francesco</p>
