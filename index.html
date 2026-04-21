@@ -1,59 +1,506 @@
 <!DOCTYPE html>
-<html lang="it">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Miele QR Code</title>
+    <title>Miel de Haute-Loire | Candice & Francesco</title>
+    <meta name="description" content="Un miel de Haute-Loire, entre traditions familiales françaises et souvenirs du sud de l'Italie.">
+    <meta property="og:title" content="Miel de Haute-Loire | Candice & Francesco">
+    <meta property="og:description" content="Un petit cadeau doux, entre traditions familiales et souvenirs partagés.">
+    <meta property="og:image" content="https://fra0074.github.io/miele_qrcode/assets/haute-loire-ruches-enfant.jpg">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://fra0074.github.io/miele_qrcode/">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='29' fill='%23faf6f0'/%3E%3Cpath d='M18 22h28l-3 27H21L18 22z' fill='%23c99545'/%3E%3Cpath d='M22 22c2-8 18-8 20 0' fill='none' stroke='%237a4218' stroke-width='5' stroke-linecap='round'/%3E%3C/svg%3E">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
     <style>
+        :root {
+            --cream: #faf6f0;
+            --warm-white: #fffdf8;
+            --stone: #e7dcc6;
+            --honey: #c99545;
+            --rose: #ca2b72;
+            --wine: #7c2348;
+            --olive: #59634f;
+            --brown: #7a4218;
+            --ink: #2b2118;
+            --muted: #76685d;
+            --shadow: rgba(61, 38, 22, 0.16);
+        }
+
         * {
+            box-sizing: border-box;
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
         }
 
         body {
-            font-family: Georgia, 'Times New Roman', serif;
-            background-color: #fdfaf6;
-            color: #333;
-            display: flex;
-            justify-content: center;
-            padding: 2rem 1rem;
+            background: var(--cream);
+            color: var(--ink);
+            font-family: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.65;
         }
 
-        .container {
-            max-width: 600px;
-            width: 100%;
-        }
-
-        .image-wrapper {
-            width: 100%;
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-        }
-
-        .image-wrapper img {
-            width: 100%;
-            height: auto;
+        img {
             display: block;
+            width: 100%;
         }
 
-        .text-content {
-            margin-top: 1.5rem;
-            line-height: 1.7;
-            font-size: 1.05rem;
-            color: #555;
+        .site-header {
+            align-items: center;
+            display: flex;
+            justify-content: space-between;
+            left: 0;
+            padding: 22px clamp(18px, 4vw, 56px);
+            position: absolute;
+            right: 0;
+            top: 0;
+            z-index: 10;
+        }
+
+        .brand {
+            color: var(--warm-white);
+            font-family: "Playfair Display", Georgia, serif;
+            font-size: clamp(1.35rem, 3vw, 1.9rem);
+            letter-spacing: 0.02em;
+            text-decoration: none;
+            text-shadow: 0 2px 16px rgba(0, 0, 0, 0.22);
+        }
+
+        .header-note {
+            color: rgba(255, 253, 248, 0.92);
+            font-size: 0.9rem;
+            font-weight: 500;
+            text-align: right;
+            text-shadow: 0 2px 14px rgba(0, 0, 0, 0.22);
+        }
+
+        .hero {
+            min-height: 92svh;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .hero::after {
+            background:
+                linear-gradient(90deg, rgba(31, 23, 17, 0.64), rgba(31, 23, 17, 0.24) 48%, rgba(31, 23, 17, 0.08)),
+                linear-gradient(0deg, rgba(31, 23, 17, 0.34), rgba(31, 23, 17, 0.04) 45%);
+            content: "";
+            inset: 0;
+            position: absolute;
+        }
+
+        .hero img {
+            height: 92svh;
+            object-fit: cover;
+            object-position: center center;
+        }
+
+        .hero-content {
+            bottom: clamp(52px, 11vh, 118px);
+            color: var(--warm-white);
+            left: clamp(22px, 7vw, 92px);
+            max-width: 680px;
+            position: absolute;
+            right: 22px;
+            z-index: 2;
+        }
+
+        h1,
+        h2,
+        h3 {
+            font-family: "Playfair Display", Georgia, serif;
+            font-weight: 400;
+            line-height: 1.06;
+        }
+
+        h1 {
+            animation: riseIn 900ms ease both;
+            font-size: clamp(3rem, 8vw, 7.4rem);
+            letter-spacing: 0.015em;
+            margin-bottom: 24px;
+            text-shadow: 0 8px 30px rgba(0, 0, 0, 0.28);
+        }
+
+        .hero-content p {
+            animation: riseIn 900ms 120ms ease both;
+            font-size: clamp(1.1rem, 2vw, 1.55rem);
+            font-weight: 300;
+            max-width: 560px;
+            text-shadow: 0 4px 18px rgba(0, 0, 0, 0.24);
+        }
+
+        .scroll-cue {
+            align-items: center;
+            bottom: 26px;
+            color: rgba(255, 253, 248, 0.88);
+            display: flex;
+            font-size: 0.86rem;
+            gap: 10px;
+            left: clamp(22px, 7vw, 92px);
+            position: absolute;
+            z-index: 2;
+        }
+
+        .scroll-cue::before {
+            background: currentColor;
+            content: "";
+            height: 1px;
+            width: 52px;
+        }
+
+        main {
+            overflow: hidden;
+        }
+
+        .section {
+            padding: clamp(64px, 11vw, 128px) clamp(18px, 5vw, 72px);
+        }
+
+        .intro {
+            background: var(--warm-white);
+        }
+
+        .story-grid {
+            align-items: start;
+            display: grid;
+            gap: clamp(36px, 6vw, 86px);
+            grid-template-columns: minmax(0, 0.9fr) minmax(320px, 1.1fr);
+            margin: 0 auto;
+            max-width: 1180px;
+        }
+
+        .section-title {
+            color: var(--brown);
+            font-size: clamp(2.45rem, 5vw, 4.8rem);
+            margin-bottom: 24px;
+        }
+
+        .section-kicker {
+            color: var(--rose);
+            display: block;
+            font-size: 0.84rem;
+            font-weight: 600;
+            letter-spacing: 0.12em;
+            margin-bottom: 18px;
+            text-transform: uppercase;
+        }
+
+        .lead {
+            color: var(--muted);
+            font-size: clamp(1.02rem, 1.6vw, 1.22rem);
+            max-width: 500px;
+        }
+
+        .text-stack {
+            border-left: 1px solid var(--stone);
+            padding-left: clamp(22px, 4vw, 46px);
+        }
+
+        .pair {
+            padding: 0 0 28px;
+        }
+
+        .pair + .pair {
+            border-top: 1px solid rgba(122, 66, 24, 0.13);
+            padding-top: 28px;
+        }
+
+        .fr {
+            color: var(--ink);
+            font-family: "Playfair Display", Georgia, serif;
+            font-size: clamp(1.35rem, 2.5vw, 2.25rem);
+            line-height: 1.28;
+        }
+
+        .it {
+            color: var(--muted);
+            font-size: clamp(0.98rem, 1.25vw, 1.1rem);
+            margin-top: 12px;
+        }
+
+        .source-list {
+            display: grid;
+            gap: 18px;
+            margin-top: 8px;
+        }
+
+        .source-item {
+            border-top: 1px solid rgba(122, 66, 24, 0.16);
+            padding-top: 18px;
+        }
+
+        .source-item strong {
+            color: var(--wine);
+            display: block;
+            font-family: "Playfair Display", Georgia, serif;
+            font-size: clamp(1.16rem, 1.8vw, 1.45rem);
+            font-weight: 500;
+            margin-bottom: 4px;
+        }
+
+        .source-item span {
+            color: var(--muted);
+            display: block;
+            font-size: 0.97rem;
+        }
+
+        .photo-section {
+            background: linear-gradient(180deg, var(--warm-white), var(--cream));
+            padding-top: 0;
+        }
+
+        .wide-photo {
+            margin: 0 auto;
+            max-width: 1280px;
+            position: relative;
+        }
+
+        .wide-photo img {
+            aspect-ratio: 16 / 8.4;
+            border: 1px solid rgba(122, 66, 24, 0.16);
+            box-shadow: 0 22px 60px var(--shadow);
+            object-fit: cover;
+        }
+
+        .photo-caption {
+            color: var(--olive);
+            font-family: "Playfair Display", Georgia, serif;
+            font-size: clamp(1.25rem, 2.4vw, 2.2rem);
+            margin: 22px auto 0;
+            max-width: 960px;
+            text-align: center;
+        }
+
+        .italy {
+            background: #2f2a24;
+            color: var(--warm-white);
+            display: grid;
+            gap: clamp(32px, 6vw, 78px);
+            grid-template-columns: minmax(0, 0.86fr) minmax(320px, 1.14fr);
+            padding-bottom: clamp(68px, 10vw, 122px);
+            padding-top: clamp(72px, 10vw, 122px);
+        }
+
+        .italy-copy {
+            align-self: center;
+        }
+
+        .italy h2 {
+            color: var(--warm-white);
+            font-size: clamp(2.35rem, 5vw, 5rem);
+            margin-bottom: 18px;
+        }
+
+        .italy .it {
+            color: rgba(255, 253, 248, 0.72);
+            max-width: 430px;
+        }
+
+        .italy-photo img {
+            aspect-ratio: 4 / 3;
+            border: 1px solid rgba(255, 253, 248, 0.22);
+            object-fit: cover;
+            object-position: center center;
+        }
+
+        .footer {
+            background: var(--cream);
+            color: var(--brown);
+            padding: 34px 18px 42px;
+            text-align: center;
+        }
+
+        .footer-line {
+            background: linear-gradient(90deg, transparent, var(--rose), transparent);
+            height: 1px;
+            margin: 0 auto 22px;
+            max-width: 240px;
+        }
+
+        .footer p {
+            font-family: "Playfair Display", Georgia, serif;
+            font-size: 1.25rem;
+        }
+
+        .reveal {
+            animation: fadeUp 900ms ease both;
+            animation-timeline: view();
+            animation-range: entry 12% cover 32%;
+        }
+
+        @keyframes riseIn {
+            from {
+                opacity: 0;
+                transform: translateY(22px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeUp {
+            from {
+                opacity: 0.2;
+                transform: translateY(26px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 820px) {
+            .site-header {
+                padding: 18px 20px;
+            }
+
+            .header-note {
+                font-size: 0.78rem;
+                max-width: 150px;
+            }
+
+            .hero,
+            .hero img {
+                min-height: 88svh;
+            }
+
+            .hero img {
+                height: 88svh;
+                object-position: 48% center;
+            }
+
+            .story-grid,
+            .italy {
+                grid-template-columns: 1fr;
+            }
+
+            .text-stack {
+                border-left: 0;
+                padding-left: 0;
+            }
+
+            .wide-photo img {
+                aspect-ratio: 4 / 3;
+            }
+
+            .italy {
+                padding-left: 20px;
+                padding-right: 20px;
+            }
+
+        }
+
+        @media (max-width: 520px) {
+            .hero-content {
+                bottom: 78px;
+            }
+
+            h1 {
+                font-size: clamp(2.7rem, 16vw, 4.6rem);
+            }
+
+            .section {
+                padding-left: 20px;
+                padding-right: 20px;
+            }
+
+            .fr {
+                font-size: 1.45rem;
+            }
+
+            .scroll-cue {
+                font-size: 0.76rem;
+            }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <div class="image-wrapper">
-            <img src="image.jpg" alt="Immagine">
-        </div>
-        <div class="text-content">
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
-        </div>
-    </div>
+    <header class="site-header">
+        <a class="brand" href="#top" aria-label="Candice et Francesco">C &amp; F</a>
+        <p class="header-note">Miel de Haute-Loire<br>Souvenir de famille</p>
+    </header>
+
+    <main id="top">
+        <section class="hero" aria-label="Photo de ruches en Haute-Loire">
+            <img src="assets/haute-loire-ruches-enfant.jpg" alt="Enfant près des ruches familiales en Haute-Loire">
+            <div class="hero-content">
+                <h1>Miel de Haute-Loire</h1>
+                <p>Un petit pot de douceur, de mémoire et de traditions partagées.</p>
+            </div>
+            <div class="scroll-cue">lire l'histoire</div>
+        </section>
+
+        <section class="section intro">
+            <div class="story-grid">
+                <div class="story-heading reveal">
+                    <span class="section-kicker">Entre France et Italie</span>
+                    <h2 class="section-title">Une douceur à partager</h2>
+                    <p class="lead">Quelques lignes pour raconter d'où vient ce miel, et pourquoi il accompagne notre histoire.</p>
+                </div>
+
+                <div class="text-stack reveal">
+                    <div class="pair">
+                        <p class="fr">Ce miel a été récolté en Haute-Loire, à l'endroit où les grands-parents maternels de Candice veillaient eux-mêmes sur leurs ruches.</p>
+                        <p class="it">Questo miele è stato raccolto in Haute-Loire, nel luogo in cui i nonni materni di Candice si prendevano cura delle loro arnie.</p>
+                    </div>
+
+                    <div class="pair">
+                        <p class="fr">Il symbolise le lien entre nos traditions familiales. Une douceur à partager en souvenir de ceux qui nous ont transmis le goût du savoir et des bonnes choses.</p>
+                        <p class="it">Simboleggia il legame tra le nostre tradizioni familiari. Una dolcezza da condividere in ricordo di chi ci ha trasmesso il gusto del sapere e delle cose buone.</p>
+                    </div>
+
+                    <div class="pair">
+                        <p class="fr">Saurez-vous deviner si vous avez hérité d'un miel de sapin ou d'un miel fleuri ? 🐝</p>
+                        <p class="it">Saprete indovinare se avete ricevuto un miele di abete o un miele millefiori?</p>
+                    </div>
+
+                    <div class="source-list" aria-label="Producteurs de miel">
+                        <div class="source-item">
+                            <strong>Miel toutes fleurs</strong>
+                            <span>Philippe Pagès - Seniautre, 43350 Saint Geneys près Saint Paulien</span>
+                            <span>Miele millefiori: Philippe Pagès - Seniautre, 43350 Saint Geneys presso Saint Paulien</span>
+                        </div>
+
+                        <div class="source-item">
+                            <strong>Miel de sapin</strong>
+                            <span>La Miellerie de la Durande - 20 rue de l'Abreuvoir - 43400 Siaugues-Sainte-Marie</span>
+                            <span>Miele di abete: La Miellerie de la Durande - 20 rue de l'Abreuvoir - 43400 Siaugues-Sainte-Marie</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section photo-section">
+            <figure class="wide-photo reveal">
+                <img src="assets/haute-loire-ruches-cadre.jpg" alt="Apiculteurs examinant un cadre de ruche en Haute-Loire">
+                <figcaption class="photo-caption">Des gestes transmis, des ruches veillées, une histoire qui continue.</figcaption>
+            </figure>
+        </section>
+
+        <section class="section italy">
+            <div class="italy-copy reveal">
+                <span class="section-kicker">Souvenir italien</span>
+                <h2>Pendant ce temps-là dans le sud de l'Italie...</h2>
+                <p class="it">Nel frattempo, nel sud Italia...</p>
+            </div>
+
+            <figure class="italy-photo reveal">
+                <img src="assets/sud-italie-miel.jpg" alt="Souvenir familial autour du miel dans le sud de l'Italie">
+            </figure>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-line"></div>
+        <p>Candice &amp; Francesco</p>
+    </footer>
 </body>
 </html>
